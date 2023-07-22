@@ -1,4 +1,5 @@
 markdown-it-py==3.0.0
 mdurl==0.1.2
+platformdirs==3.9.1
 Pygments==2.15.1
 rich==13.4.2
