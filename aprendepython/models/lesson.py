@@ -1,11 +1,11 @@
-from typing import Collection
+from typing import Sequence
 from .exercise import Exercise
 
 
 class Lesson:
     def __init__(self, id_: str, name: str, completed: bool,
-                 dependencies: Collection[str],
-                 content: Collection[str | Exercise]):
+                 dependencies: Sequence[str],
+                 content: Sequence[str | Exercise]):
         self.id_ = id_
         self.name = name
         self.completed = completed

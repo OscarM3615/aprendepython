@@ -1,9 +1,9 @@
-from typing import Optional, Collection
+from typing import Optional, Sequence
 from .lesson import Lesson
 
 
 class Module:
-    def __init__(self, name: str, lessons: Optional[Collection[Lesson]] = None):
+    def __init__(self, name: str, lessons: Optional[Sequence[Lesson]] = None):
         self.name = name
         if lessons is not None:
             self.lessons = lessons
