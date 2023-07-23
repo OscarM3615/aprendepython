@@ -24,6 +24,7 @@ def introduction():
         'de Python (>>>), puedes elegir si guardar o no el progreso actual.\n'
     )
     console.print('¡Comencemos con las lecciones!\n')
+    console.input('...\n\n')
 
     config['intro_completed'] = True
     config.save()
