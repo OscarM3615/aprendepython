@@ -19,8 +19,9 @@ def introduction():
     )
     selection(['Continuar', 'Seguir', 'Entendido'])
     console.print(
-        'Si en algún momento deseas salir del curso puedes pulsar Ctrl+C para '
-        'elegir si guardar o no el progreso actual.\n'
+        'Si en algún momento deseas salir del curso puedes pulsar Ctrl+C '
+        'durante una lectura o escribir exit() si te encuentras en el prompt '
+        'de Python (>>>), puedes elegir si guardar o no el progreso actual.\n'
     )
     console.print('¡Comencemos con las lecciones!\n')
 
