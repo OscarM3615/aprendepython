@@ -29,6 +29,7 @@ from platformdirs import PlatformDirs
 
 
 default_options: Dict[str, Any] = {
+    'intro_completed': False,
     'completed_lessons': []
 }
 
