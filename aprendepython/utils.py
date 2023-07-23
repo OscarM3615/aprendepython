@@ -1,3 +1,10 @@
+"""
+A module for user interaction and console utilities.
+
+This module provides utility functions to print styled messages and handle
+user interaction such as option selection and safely exit the program.
+"""
+
 from typing import Optional, Sequence
 from rich.console import Console
 
@@ -50,6 +57,10 @@ def selection(options: Sequence[str], *, title: Optional[str] = None) -> int:
 
 
 def safe_exit():
+    """
+    Ask the user to save progress into the config file, then exit the interpreter.
+    """
+
     option = selection(
         ['Guardar y salir', 'Salir sin guardar'],
         title='¿Deseas guardar tu progreso antes de salir?'

@@ -1,13 +1,36 @@
+"""
+Module representing the menu for choosing and running lessons.
+"""
+
 from .config import config
 from .content import lessons
 from .utils import console, safe_exit, selection
 
 
 class Menu:
+    """
+    Represents the menu for choosing and running lessons.
+
+    Attributes:
+        lessons (List[Lesson]):
+            A list of Lesson objects representing available lessons.
+
+    Methods:
+        show(self):
+            Displays the menu and allows the user to select and run a lesson.
+    """
+
     def __init__(self):
         self.lessons = lessons
 
     def show(self):
+        """
+        Display the available lessons and allow the user to select and run a
+        lesson.
+
+        Note: This function will create a loop until the user wants to exit.
+        """
+
         while True:
             selected = selection(
                 self.lessons,

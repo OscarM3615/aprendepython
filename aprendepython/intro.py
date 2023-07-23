@@ -1,8 +1,21 @@
+"""
+Module providing introductory functionality for the course.
+
+This module includes the 'introduction()' function, which provides a tutorial
+on how to navigate through the course.
+"""
+
 from .config import config
 from .utils import console, selection
 
 
 def introduction():
+    """
+    Displays an introduction to the lessons and guides the user through the
+    setup before starting. It marks the introduction as completed in the
+    configuration.
+    """
+
     console.print(
         'Antes de comenzar con las lecciones, es necesario cubrir algunos '
         'aspectos sobre cómo utilizar la librería. Primero, necesitas saber '
