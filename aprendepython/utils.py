@@ -28,10 +28,17 @@ def selection(options: Sequence[str], *, title: Optional[str] = None) -> int:
     while True:
         try:
             answer = int(console.input('\n[white]Selección: [/]'))
+            if answer not in range(len(options) + 1):
+                raise IndexError()
         except ValueError:
             console.print(
                 '[red]La selección debe ser un número. Por favor intenta de '
                 'nuevo.[/]'
+            )
+        except IndexError:
+            console.print(
+                '[red]La selección debe estar entre las opciones. Por favor '
+                'intenta de nuevo.[/]'
             )
         else:
             break
