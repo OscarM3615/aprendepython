@@ -19,15 +19,15 @@ def selection(options: Sequence[str], *, title: Optional[str] = None) -> int:
 
     if not title:
         title = 'Selecciona el número de la opción y presiona Enter.'
-    console.print(f'[white]{title}[/]\n')
+    console.print(f'[default]{title}[/]\n')
 
     for i, opt in enumerate(options, start=1):
-        console.print(f'[white]{i}: {opt}[/]')
+        console.print(f'[default]{i}: {opt}[/]')
 
     # Repeat the input until the answer is a number.
     while True:
         try:
-            answer = int(console.input('\n[white]Selección: [/]'))
+            answer = int(console.input('\n[default]Selección: [/]'))
             if answer not in range(len(options) + 1):
                 raise IndexError()
         except ValueError:
