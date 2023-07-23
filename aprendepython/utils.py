@@ -1,6 +1,8 @@
 from typing import Optional, Sequence
 from rich.console import Console
 
+from .config import config
+
 console = Console(style='blue', width=80)
 
 
@@ -45,3 +47,17 @@ def selection(options: Sequence[str], *, title: Optional[str] = None) -> int:
     print()
 
     return answer
+
+
+def safe_exit():
+    option = selection(
+        ['Guardar y salir', 'Salir sin guardar'],
+        title='¿Deseas guardar tu progreso antes de salir?'
+    )
+
+    if option == 1:
+        config.save()
+        console.print('[green]Cambios guardados.[/]')
+
+    console.print('¡Hasta la próxima!\n')
+    exit()

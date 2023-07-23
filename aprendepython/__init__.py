@@ -1,5 +1,6 @@
 from .intro import introduction
 from .config import config
+from .menu import Menu
 from .utils import console
 
 
@@ -9,7 +10,8 @@ def comenzar():
     if not config['intro_completed']:
         introduction()
 
-    # TODO: Display main menu
+    menu = Menu()
+    menu.show()
 
 
 config.load()
