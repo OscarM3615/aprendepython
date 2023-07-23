@@ -20,10 +20,10 @@ config.save()
 ```
 """
 
-import os
 import json
-from typing import Dict, Any
+import os
 from pathlib import Path
+from typing import Dict, Any
 
 from platformdirs import PlatformDirs
 
