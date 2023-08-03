@@ -18,8 +18,10 @@ class Lesson:
 
     def run(self):
         for block in self.content:
-            # TODO: Check if block is text or an exercise.
-            console.print(block)
+            if isinstance(block, Exercise):
+                block.run()
+            else:
+                console.print(block)
             console.input('\n...\n\n')
 
         console.print(
