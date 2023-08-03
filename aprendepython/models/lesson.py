@@ -1,3 +1,12 @@
+"""
+Module representing lessons in the course and user progress tracking.
+
+This module provides the 'Lesson' class, which represents a lesson in the
+course. Each lesson contains an ID, a name, content (a sequence of information
+and exercises to be displayed to the user), and an optional previous lesson that
+must be completed before taking the current lesson.
+"""
+
 from typing import Optional, Sequence
 
 from .exercise import Exercise
@@ -6,8 +15,26 @@ from ..utils import console
 
 
 class Lesson:
+    """Represents a lesson in the course."""
+
     def __init__(self, id_: str, name: str, content: Sequence[str | Exercise],
                  prev: Optional['Lesson'] = None):
+        """
+        Initialise the Lesson instance.
+
+        Args:
+            id_ (int):
+                A unique identifier.
+            name (str):
+                The name to be shown to the user.
+            content (Sequence[str | Exercise]):
+                A sequence of information and exercises to be displayed to the
+                user.
+            prev (Optional[Lesson]):
+                An optional previous lesson to be completed before the user can
+                take the current lesson.
+        """
+
         self.id_ = id_
         self.name = name
         self.content = content
@@ -17,6 +44,15 @@ class Lesson:
         return self.name
 
     def run(self):
+        """
+        Displays the information or runs the exercises present within the
+        content attribute.
+
+        Note:
+            The lesson id is appended to the completed_lessons array in the
+            config object, but does not save changes.
+        """
+
         for block in self.content:
             if isinstance(block, Exercise):
                 block.run()

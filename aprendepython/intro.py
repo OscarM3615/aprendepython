@@ -32,6 +32,13 @@ def introduction():
     )
     selection(['Continuar', 'Seguir', 'Entendido'])
     console.print(
+        'En algunos ejercicios será necesario que escribas comprobar() para '
+        'poder evaluar la respuesta, por lo general será en ejercicios que '
+        'requieran que escribas varias líneas de código. Cuando los ejercicios '
+        'se resuelvan en una sola línea este se evaluará de inmediato.\n'
+    )
+    console.input('...\n\n')
+    console.print(
         'Si en algún momento deseas salir del curso puedes pulsar Ctrl+C '
         'durante una lectura o escribir exit() si te encuentras en el prompt '
         'de Python (>>>), puedes elegir si guardar o no el progreso actual.\n'
