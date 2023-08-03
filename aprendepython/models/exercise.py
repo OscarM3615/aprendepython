@@ -6,7 +6,11 @@ from code import InteractiveConsole
 from ..utils import console
 
 
+class CheckExercise(SystemExit): ...
+
+
 def exercise_exit(): raise SystemExit
+def exercise_check(): raise CheckExercise
 
 
 class Exercise(metaclass=ABCMeta):
@@ -17,8 +21,8 @@ class Exercise(metaclass=ABCMeta):
     def __init__(self):
         self.locals = {
             **self.env,
-            '__doc__': None,
-            'exit': exercise_exit
+            'exit': exercise_exit,
+            'comprobar': exercise_check,
         }
 
     @abstractmethod
@@ -46,3 +50,18 @@ class OnelinerExercise(Exercise):
                 break
             else:
                 console.print(f'\n[red]{random.choice(self.hints)}[/]\n')
+
+
+class InteractiveExercise(Exercise):
+    def run(self):
+        console.print(self.instructions + '\n')
+
+        while True:
+            try:
+                shell = InteractiveConsole(self.locals).interact('', '')
+            except CheckExercise:
+                if self.test():
+                    console.print('\n[green]¡Bien hecho![/]')
+                    break
+                else:
+                    console.print(f'\n[red]{random.choice(self.hints)}[/]\n')
