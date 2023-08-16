@@ -3,14 +3,9 @@ from abc import ABCMeta, abstractmethod
 from typing import Any, Mapping, Sequence
 from code import InteractiveConsole
 
-from ..utils import console
-
-
-class CheckExercise(SystemExit): ...
-
-
-def exercise_exit(): raise SystemExit
-def exercise_check(): raise CheckExercise
+from ..utils import (
+    console, exercise_check, exercise_exit, confirm_quit_lesson, CheckExercise
+)
 
 
 class Exercise(metaclass=ABCMeta):
@@ -22,6 +17,7 @@ class Exercise(metaclass=ABCMeta):
         self.locals = {
             **self.env,
             'exit': exercise_exit,
+            'quit': exercise_exit,
             'comprobar': exercise_check,
         }
 

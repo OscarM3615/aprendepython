@@ -8,7 +8,11 @@ def comenzar():
     console.print('¡Bienvenido a [bold green]aprendepython[/]!\n')
 
     if not config['intro_completed']:
-        introduction()
+        try:
+            introduction()
+        except (KeyboardInterrupt, EOFError):
+            console.print('[yellow]Saliendo de [bold green]aprendepython[/]...[/]')
+            exit()
 
     menu = Menu()
     menu.show()

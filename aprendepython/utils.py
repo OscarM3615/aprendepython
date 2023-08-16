@@ -13,6 +13,18 @@ from .config import config
 console = Console(style='blue', width=80)
 
 
+class CheckExercise(SystemExit):
+    ...
+
+
+class QuitLesson(SystemExit):
+    ...
+
+
+def exercise_check(): raise CheckExercise
+def exercise_exit(): raise QuitLesson
+
+
 def selection(options: Sequence[str], *, title: Optional[str] = None) -> int:
     """
     Generate a styled menu with the provided options and return the selected
@@ -39,6 +51,8 @@ def selection(options: Sequence[str], *, title: Optional[str] = None) -> int:
             answer = int(console.input('\n[default]Selección: [/]'))
             if answer not in range(len(options) + 1):
                 raise IndexError()
+        except (KeyboardInterrupt, EOFError):
+            console.print('[yellow]Por favor elige una opción.[/]')
         except ValueError:
             console.print(
                 '[red]La selección debe ser un número. Por favor intenta de '
@@ -61,14 +75,32 @@ def safe_exit():
     Ask the user to save progress into the config file, then exit the interpreter.
     """
 
-    option = selection(
-        ['Guardar y salir', 'Salir sin guardar'],
-        title='¿Deseas guardar tu progreso antes de salir?'
-    )
-
-    if option == 1:
-        config.save()
-        console.print('[green]Cambios guardados.[/]')
+    try:
+        option = selection(
+            ['Guardar y salir', 'Salir sin guardar'],
+            title='¿Deseas guardar tu progreso antes de salir?'
+        )
+        if option == 1:
+            config.save()
+            console.print('[green]Cambios guardados.[/]')
+    except (KeyboardInterrupt, EOFError):
+        ...
 
     console.print('¡Hasta la próxima!\n')
     exit()
+
+
+def confirm_quit_lesson() -> bool:
+    """
+    Ask the user to confirm quitting the current lesson.
+    """
+
+    try:
+        option = selection(
+            ['Terminar la lección', 'Continuar estudiando'],
+            title='¿Deseas terminar la lección? El progreso no será guardado.'
+        )
+    except (KeyboardInterrupt, EOFError):
+        option = 1
+
+    return option == 1

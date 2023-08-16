@@ -11,7 +11,7 @@ from typing import Optional, Sequence
 
 from .exercise import Exercise
 from ..config import config
-from ..utils import console
+from ..utils import confirm_quit_lesson, console, QuitLesson
 
 
 class Lesson:
@@ -54,11 +54,18 @@ class Lesson:
         """
 
         for block in self.content:
-            if isinstance(block, Exercise):
-                block.run()
-            else:
-                console.print(block)
-            console.input('\n...\n\n')
+            while True:
+                try:
+                    if isinstance(block, Exercise):
+                        block.run()
+                    else:
+                        console.print(block)
+
+                    console.input('\n...\n\n')
+                    break
+                except (KeyboardInterrupt, EOFError, QuitLesson):
+                    if confirm_quit_lesson():
+                        raise QuitLesson
 
         console.print(
             f'¡Felicidades! Has completado la lección "{self.name}". Ahora '

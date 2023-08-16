@@ -4,7 +4,7 @@ Module representing the menu for choosing and running lessons.
 
 from .config import config
 from .content import lessons
-from .utils import console, safe_exit, selection
+from .utils import console, safe_exit, selection, QuitLesson
 
 
 class Menu:
@@ -44,7 +44,10 @@ class Menu:
             # Run the lesson if user completed its dependency.
             lesson = self.lessons[selected - 1]
             if not lesson.prev or lesson.prev.id_ in config['completed_lessons']:
-                lesson.run()
+                try:
+                    lesson.run()
+                except QuitLesson:
+                    ...  # back to main menu
             else:
                 console.print(
                     '[red]No puedes tomar esta lección aún. Primero necesitas '
