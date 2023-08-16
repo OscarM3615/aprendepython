@@ -1,3 +1,10 @@
+"""
+Module providing exercise classes for interactive learning.
+
+This module defines abstract exercise classes and concrete implementations for
+interactively checking and testing user-submitted solutions.
+"""
+
 import random
 from abc import ABCMeta, abstractmethod
 from typing import Any, Mapping, Sequence
@@ -9,11 +16,20 @@ from ..utils import (
 
 
 class Exercise(metaclass=ABCMeta):
+    """
+    Abstract base class for interactive exercises.
+
+    This class defines the basic needed attributes for an exercise to run.
+    It also defines the methods that must be implemented in exercise subclasses.
+    """
+
     instructions: str = 'Please override the instructions attribute in your class.'
     env: Mapping[str, Any] = {}
     hints: Sequence[str] = ['Inténtalo de nuevo por favor.']
 
     def __init__(self):
+        """Initializes the exercise environment and locals."""
+
         self.locals = {
             **self.env,
             'exit': exercise_exit,
@@ -29,11 +45,21 @@ class Exercise(metaclass=ABCMeta):
 
 
 class OnelinerExercise(Exercise):
+    """
+    Interactive exercise class for single-line code solutions.
+
+    Note:
+        User-defined exercises must implement the test() method to define the
+        validation logic.
+    """
+
     def __init__(self):
         super().__init__()
         self.source = ''
 
     def run(self):
+        """Runs the interactive exercise for single-line code solutions."""
+
         console.print(self.instructions + '\n')
 
         while True:
@@ -49,7 +75,17 @@ class OnelinerExercise(Exercise):
 
 
 class InteractiveExercise(Exercise):
+    """
+    Interactive exercise class for multi-line code solutions.
+
+    Note:
+        User-defined exercises must implement the test() method to define the
+        validation logic.
+    """
+
     def run(self):
+        """Runs the interactive exercise for multi-line code solutions."""
+
         console.print(self.instructions + '\n')
 
         while True:

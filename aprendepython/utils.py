@@ -14,15 +14,47 @@ console = Console(style='blue', width=80)
 
 
 class CheckExercise(SystemExit):
+    """
+    Custom exception for controlling program flow during exercise checking.
+
+    This exception is raised when the program flow needs to be interrupted to
+    check the user's exercise solution. It inherits from the built-in SystemExit
+    exception, which allows InteractiveConsole to be closed gracefully.
+    """
+
     ...
 
 
 class QuitLesson(SystemExit):
+    """
+    Custom exception for controlling program flow when quitting a lesson.
+
+    This exception is raised when the user decides to quit the current lesson.
+    It inherits from the built-in SystemExit exception, allowing the program to
+    exit the lesson gracefully.
+    """
+
     ...
 
 
-def exercise_check(): raise CheckExercise
-def exercise_exit(): raise QuitLesson
+def exercise_check():
+    """
+    This function raises a 'CheckExercise' exception, which is caught at an
+    appropriate level in the program's control flow to initiate the exercise
+    checking process.
+    """
+
+    raise CheckExercise
+
+
+def exercise_exit():
+    """
+    This function raises a 'QuitLesson' exception, which is caught at an
+    appropriate level in the program's control flow to handle the process of
+    quitting the current lesson.
+    """
+
+    raise QuitLesson
 
 
 def selection(options: Sequence[str], *, title: Optional[str] = None) -> int:
