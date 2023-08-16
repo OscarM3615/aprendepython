@@ -67,7 +67,13 @@ class OnelinerExercise(Exercise):
             self.source = shell.raw_input('>>> ')
             shell.runsource(self.source)
 
-            if self.test():
+            try:
+                solution_valid = self.test()
+            except Exception as ex:
+                console.print(f'[red]{ex}[/]')
+                solution_valid = False
+
+            if solution_valid:
                 console.print('\n[green]¡Bien hecho![/]')
                 break
             else:
@@ -92,7 +98,13 @@ class InteractiveExercise(Exercise):
             try:
                 shell = InteractiveConsole(self.locals).interact('', '')
             except CheckExercise:
-                if self.test():
+                try:
+                    solution_valid = self.test()
+                except Exception as ex:
+                    console.print(f'[red]{ex}[/]')
+                    solution_valid = False
+
+                if solution_valid:
                     console.print('\n[green]¡Bien hecho![/]')
                     break
                 else:
