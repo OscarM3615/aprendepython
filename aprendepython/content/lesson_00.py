@@ -5,8 +5,8 @@ from ..models.exercise import OnelinerExercise
 
 
 class UsePrintFunction(OnelinerExercise):
-    instructions = 'Utiliza la instrucción print() para mostrar "Hola mundo" '
-    'en pantalla:'
+    instructions = ('Utiliza la instrucción print() para mostrar "Hola mundo" '
+    'en pantalla:')
     hints = [
         'Recuerda colocar el texto entre comillas',
         'Recuerda utilizar paréntesis en la instrucción',
