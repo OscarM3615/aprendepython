@@ -2,7 +2,7 @@ import re
 
 from ..models.lesson import Lesson
 from ..models.exercise import OnelinerExercise
-from .lesson_02 import lesson_02
+from .lesson_02_strings import lesson_02_strings
 
 
 class DeclareBoolVariable(OnelinerExercise):
@@ -17,7 +17,7 @@ class DeclareBoolVariable(OnelinerExercise):
         return bool(re.match(r'^soy_mayor *?= *?(True|False)', self.source))
 
 
-lesson_03 = Lesson(
+lesson_03_booleans = Lesson(
     'tipo-de-dato-logico',
     'Tipo de dato lógico',
     [
@@ -34,5 +34,5 @@ lesson_03 = Lesson(
 
         DeclareBoolVariable(),
     ],
-    lesson_02
+    lesson_02_strings
 )

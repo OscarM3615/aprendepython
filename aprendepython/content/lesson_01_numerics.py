@@ -2,7 +2,7 @@ import re
 
 from ..models.lesson import Lesson
 from ..models.exercise import OnelinerExercise
-from .lesson_00 import lesson_00
+from .lesson_00_intro import lesson_00_intro
 
 
 class DeclareIntVariable(OnelinerExercise):
@@ -29,7 +29,7 @@ class DeclareFloatVariable(OnelinerExercise):
         return bool(re.match('^y *?= *?2.5', self.source))
 
 
-lesson_01 = Lesson(
+lesson_01_numerics = Lesson(
     'tipos-de-datos-numericos',
     'Tipos de datos numéricos',
     [
@@ -78,5 +78,5 @@ lesson_01 = Lesson(
         '6.0\n\n'
         'En este caso, solo se agrega la parte decimal, la cual equivale a 0.'
     ],
-    lesson_00
+    lesson_00_intro
 )

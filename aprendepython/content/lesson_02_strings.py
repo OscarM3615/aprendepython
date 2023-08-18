@@ -1,7 +1,7 @@
 from ..models.lesson import Lesson
-from .lesson_01 import lesson_01
+from .lesson_01_numerics import lesson_01_numerics
 
-lesson_02 = Lesson(
+lesson_02_strings = Lesson(
     'cadenas-de-texto',
     'Cadenas de texto',
     [
@@ -22,5 +22,5 @@ lesson_02 = Lesson(
         'Como se puede observar, el valor de num se muestra entre comillas, '
         'lo que indica que se ha convertido en una cadena de texto.'
     ],
-    lesson_01
+    lesson_01_numerics
 )

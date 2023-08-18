@@ -19,7 +19,7 @@ class UsePrintFunction(OnelinerExercise):
         )
 
 
-lesson_00 = Lesson(
+lesson_00_intro = Lesson(
     'introduccion',
     'Introducción',
     [
