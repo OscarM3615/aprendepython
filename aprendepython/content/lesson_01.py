@@ -30,7 +30,7 @@ class DeclareFloatVariable(OnelinerExercise):
 
 
 lesson_01 = Lesson(
-    'numeric-data-types',
+    'tipos-de-datos-numericos',
     'Tipos de datos numéricos',
     [
         'Python es un lenguaje de tipado dinámico, no es necesario declarar '
