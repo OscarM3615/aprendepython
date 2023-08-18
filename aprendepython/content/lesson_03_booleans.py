@@ -7,7 +7,8 @@ from .lesson_02_strings import lesson_02_strings
 
 class DeclareBoolVariable(OnelinerExercise):
     instructions = ('A continuación declara una variable llamada "soy_mayor" '
-    'con una valor True o False, dependiendo de si eres mayor de edad o no.')
+                    'con una valor True o False, dependiendo de si eres mayor '
+                    'de edad o no.')
     hints = [
         'Recuerda asignar el nombre correcto a la variable.',
         'Los valores lógicos solo pueden ser True o False.'

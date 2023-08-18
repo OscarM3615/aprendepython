@@ -7,7 +7,7 @@ from .lesson_00_intro import lesson_00_intro
 
 class DeclareIntVariable(OnelinerExercise):
     instructions = ('A modo de práctica, declara una variable llamada x con el '
-    'valor de 10:')
+                    'valor de 10:')
     hints = [
         'Recuerda asignar correctamente el nombre de la variable.',
         'Revisa que el valor sea 10',
@@ -19,7 +19,7 @@ class DeclareIntVariable(OnelinerExercise):
 
 class DeclareFloatVariable(OnelinerExercise):
     instructions = ('Para practicar el uso de los números de punto flotante, '
-    'declara una variable llamada "y" con el valor de 2.5:')
+                    'declara una variable llamada "y" con el valor de 2.5:')
     hints = [
         'Recuerda utilizar el símbolo de punto.',
         'Recuerda asignar el nombre "y" a la variable.',
