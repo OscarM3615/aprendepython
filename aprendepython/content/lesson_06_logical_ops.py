@@ -45,13 +45,13 @@ lesson_06_logical_ops = Lesson(
         'condición, para esto se utiliza el operador "not". Su funcionamiento '
         'es devolver False cuando la condición se evalúa como verdadera y '
         'devuelve True cuando la condición es falsa. Por ejemplo:\n\n'
-        'not True\n'
-        'False',
+        '[default]>>> not True\n'
+        'False[/]',
 
         'Como se observa, la condición True al ser negada se convierte en '
         'False, lo mismo sucede en el caso inverso:\n\n'
-        'not False\n'
-        'True',
+        '[default]>>> not False\n'
+        'True[/]',
 
         NotOperator(),
 
@@ -60,14 +60,14 @@ lesson_06_logical_ops = Lesson(
         'que todas las condiciones sean verdaderas para que el resultado final '
         'sea True. Si una condición no se cumple automáticamente la expresión '
         'entera será False:\n\n'
-        '\'ejemplo\' == \'ejemplo\' and 3 < 5\n'
-        'True',
+        '[default]>>> \'ejemplo\' == \'ejemplo\' and 3 < 5\n'
+        'True[/]',
 
         'En el caso anterior, la expresión completa es verdadera porque se '
         'cumplen las dos condiciones unidas por el operador "and". En cambio, '
         'si una de las condiciones no se cumple, el resultado es distinto:\n\n'
-        '\'ejemplo\' == \'EJEMPLO\' and 3 < 5\n'
-        'False\n\n'
+        '[default]>>> \'ejemplo\' == \'EJEMPLO\' and 3 < 5\n'
+        'False[/]\n\n'
         'Esta vez el resultado es False porque la primera condición no se ha '
         'cumplido.',
 
@@ -87,7 +87,7 @@ lesson_06_logical_ops = Lesson(
 
         'En caso de querer evaluar condiciones más complejas se puede hacer '
         'una combinación de estos operadores. Por ejemplo:\n\n'
-        'a and (b or c)\n\n'
+        '[default]>>> a and (b or c)[/]\n\n'
         'Esta expresión requiere que a siempre sea verdadera y que al menos '
         'una de las letras b o c sea también verdadera para devolver True. Si '
         'una de las condiciones no se cumple, se devolverá False.',

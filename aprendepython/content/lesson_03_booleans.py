@@ -30,8 +30,8 @@ lesson_03_booleans = Lesson(
         'activado/desactivado, permitido/prohibido, etc.',
 
         'En este ejemplo se muestra la declaración de variables lógicas:\n\n'
-        'curso_de_python = True\n'
-        'python_es_dificil = False',
+        '[default]>>> curso_de_python = True\n'
+        '>>> python_es_dificil = False[/]',
 
         DeclareBoolVariable(),
     ],

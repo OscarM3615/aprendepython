@@ -22,7 +22,7 @@ class CompareX4(OnelinerExercise):
 
 
 class CompareY5(OnelinerExercise):
-    instructions = 'Ahora compara y x tiene el mismo valor que y:'
+    instructions = 'Ahora compara si x tiene el mismo valor que y:'
     hints = [
         'Recuerda que para comparar se usan dos iguales (==) en lugar de uno.',
     ]
@@ -108,10 +108,10 @@ lesson_05_relational_ops = Lesson(
         'El siguiente operador es el mayor o igual (>=), que devuelve True '
         'incluso cuando ambos valores son idénticos. Para ver su diferencia, '
         'observa el siguiente código:\n\n'
-        '5 > 5\n'
+        '[default]>>> 5 > 5\n'
         'False\n'
-        '5 >= 5\n'
-        'True',
+        '>>> 5 >= 5\n'
+        'True[/]',
 
         LessOrEqualThan(),
     ],

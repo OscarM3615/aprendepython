@@ -31,7 +31,7 @@ lesson_00_intro = Lesson(
 
         'La instrucción más simple de Python es print, permite mostrar texto '
         'en pantalla incluyendo un salto de línea. Ejemplo:\n\n'
-        'print(\'Este texto se mostrará en pantalla\')',
+        '[default]>>> print(\'Este texto se mostrará en pantalla\')[/]',
 
         UsePrintFunction(),
 
@@ -39,8 +39,8 @@ lesson_00_intro = Lesson(
         'lugar de emplear llaves como en otros lenguajes de programación. Esto '
         'significa que habrá código tabulado a la derecha como en el siguiente '
         'ejemplo:\n\n'
-        'if 2 + 2 == 4:\n'
-        '    print(\'La suma es 4\')\n\n'
+        '[default]>>> if 2 + 2 == 4:\n'
+        '...     print(\'La suma es 4\')[/]\n\n'
         'El uso de indentación será visto en próximas lecciones.',
     ],
 )

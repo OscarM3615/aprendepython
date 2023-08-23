@@ -161,10 +161,10 @@ lesson_04_arithmetic_ops = Lesson(
         'También es posible hacer sumas utilizando nombres de variables, a '
         'continuación se han declarado las variables "a" y "b", observa lo '
         'que sucede al sumar ambas variables escribiendo a + b:\n\n'
-        'a = 5\n'
-        'b = 7\n'
-        'a + b\n'
-        '12',
+        '[default]>>> a = 5\n'
+        '>>> b = 7\n'
+        '>>> a + b\n'
+        '12[/]',
 
         'Hasta ahora el resultado se ha mostrado en pantalla, pero no se ha '
         'conservado en memoria. En Python, es posible asignar el resultado de '
@@ -220,7 +220,7 @@ lesson_04_arithmetic_ops = Lesson(
         'funcionalidad. Se puede emplear con cadenas de texto para unir los '
         'valores de dos variables de texto, a esto se le llama concatenación. '
         'En el siguiente ejemplo se muestra cómo se utiliza:\n\n'
-        '\'un nuevo \' + \'ejemplo\'',
+        '[default]>>> \'un nuevo \' + \'ejemplo\'[/]',
 
         'También es importante notar que el primer valor termina con un '
         'espacio. Esto es porque ambos textos son puestos uno justo después '
@@ -230,7 +230,7 @@ lesson_04_arithmetic_ops = Lesson(
         'No es posible realizar una concatenación con variables de distintos '
         'tipos de dato, sin embargo, se puede convertir las variables a texto '
         'con la instrucción str, como en el siguiente ejemplo:\n\n'
-        '\'Valor: \' + str(5)',
+        '[default]>>> \'Valor: \' + str(5)[/]',
 
         'Por último, es necesario mencionar que, al igual que en otros '
         'lenguajes, se pueden combinar los operadores en una sola expresión.',
