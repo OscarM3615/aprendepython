@@ -8,6 +8,7 @@ from .lesson_03_booleans import lesson_03_booleans
 from .lesson_04_arithmetic_ops import lesson_04_arithmetic_ops
 from .lesson_05_relational_ops import lesson_05_relational_ops
 from .lesson_06_logical_ops import lesson_06_logical_ops
+from .lesson_07_lists import lesson_07_lists
 
 
 lessons: List[Lesson] = [
@@ -18,4 +19,5 @@ lessons: List[Lesson] = [
     lesson_04_arithmetic_ops,
     lesson_05_relational_ops,
     lesson_06_logical_ops,
+    lesson_07_lists,
 ]
