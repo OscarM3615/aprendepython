@@ -9,6 +9,8 @@ from .lesson_04_arithmetic_ops import lesson_04_arithmetic_ops
 from .lesson_05_relational_ops import lesson_05_relational_ops
 from .lesson_06_logical_ops import lesson_06_logical_ops
 from .lesson_07_lists import lesson_07_lists
+from .lesson_08_tuples import lesson_08_tuples
+from .lesson_09_dicts import lesson_09_dicts
 
 
 lessons: List[Lesson] = [
@@ -20,4 +22,6 @@ lessons: List[Lesson] = [
     lesson_05_relational_ops,
     lesson_06_logical_ops,
     lesson_07_lists,
+    lesson_08_tuples,
+    lesson_09_dicts
 ]
