@@ -7,7 +7,7 @@ interactively checking and testing user-submitted solutions.
 
 import random
 from abc import ABCMeta, abstractmethod
-from typing import Any, Mapping, Sequence
+from typing import Any, Mapping, Optional, Sequence
 from code import InteractiveConsole
 
 from ..utils import (
@@ -88,6 +88,32 @@ class InteractiveExercise(Exercise):
         User-defined exercises must implement the test() method to define the
         validation logic.
     """
+
+    def __init__(self):
+        super().__init__()
+        self.stdin = ''
+        self.stdout = ''
+        self.locals = {**self.locals,
+                       'print': self._print, 'input': self._input}
+
+    def _print(self, *values: str, sep: str = ' ', end: str = '\n'):
+        """
+        Modified version of the print function that appends all the printed text
+        to the stdout attribute.
+        """
+
+        self.stdout += sep.join(values) + end
+        print(*values, sep=sep, end=end)
+
+    def _input(self, prompt: str = '') -> str:
+        """
+        Modified version of the input function that appends all the received
+        text to the stdin attribute.
+        """
+
+        value = input(prompt)
+        self.stdin += value + '\n'
+        return value
 
     def run(self):
         """Runs the interactive exercise for multi-line code solutions."""
