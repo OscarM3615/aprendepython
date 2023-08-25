@@ -23,6 +23,10 @@ class Menu:
     def __init__(self):
         self.lessons = lessons
 
+        for lesson in lessons:
+            if lesson.id_ in config['completed_lessons']:
+                lesson.completed = True
+
     def show(self):
         """
         Display the available lessons and allow the user to select and run a

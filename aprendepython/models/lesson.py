@@ -39,9 +39,12 @@ class Lesson:
         self.name = name
         self.content = content
         self.prev = prev
+        self.completed = False
 
     def __str__(self) -> str:
-        return self.name
+        if self.completed:
+            return f'[green]{self.name}[/]'
+        return f'[yellow]{self.name}[/]'
 
     def run(self):
         """
@@ -73,4 +76,5 @@ class Lesson:
         )
 
         if self.id_ not in config['completed_lessons']:
+            self.completed = True
             config['completed_lessons'].append(self.id_)
