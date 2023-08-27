@@ -96,13 +96,13 @@ class InteractiveExercise(Exercise):
         self.locals = {**self.locals,
                        'print': self._print, 'input': self._input}
 
-    def _print(self, *values: str, sep: str = ' ', end: str = '\n'):
+    def _print(self, *values: object, sep: str = ' ', end: str = '\n'):
         """
         Modified version of the print function that appends all the printed text
         to the stdout attribute.
         """
 
-        self.stdout += sep.join(values) + end
+        self.stdout += sep.join(map(str, values)) + end
         print(*values, sep=sep, end=end)
 
     def _input(self, prompt: str = '') -> str:
