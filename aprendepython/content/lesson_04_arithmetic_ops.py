@@ -1,7 +1,7 @@
 import re
 
-from ..models.lesson import Lesson
 from ..models.exercise import OnelinerExercise
+from ..models.lesson import Lesson
 from .lesson_03_booleans import lesson_03_booleans
 
 

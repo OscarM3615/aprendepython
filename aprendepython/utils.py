@@ -6,6 +6,7 @@ user interaction such as option selection and safely exit the program.
 """
 
 from typing import Optional, Sequence
+
 from rich.console import Console
 
 from .config import config

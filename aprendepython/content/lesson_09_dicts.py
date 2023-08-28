@@ -1,7 +1,7 @@
 import re
 
-from ..models.lesson import Lesson
 from ..models.exercise import InteractiveExercise, OnelinerExercise
+from ..models.lesson import Lesson
 from .lesson_08_tuples import lesson_08_tuples
 
 

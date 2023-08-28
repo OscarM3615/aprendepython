@@ -1,5 +1,5 @@
-from ..models.lesson import Lesson
 from ..models.exercise import InteractiveExercise
+from ..models.lesson import Lesson
 from .lesson_09_dicts import lesson_09_dicts
 
 

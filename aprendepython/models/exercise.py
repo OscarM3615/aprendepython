@@ -7,11 +7,11 @@ interactively checking and testing user-submitted solutions.
 
 import random
 from abc import ABCMeta, abstractmethod
-from typing import Any, Mapping, Optional, Sequence
 from code import InteractiveConsole
+from typing import Any, Mapping, Optional, Sequence
 
 from ..utils import (
-    console, exercise_check, exercise_exit, confirm_quit_lesson, CheckExercise
+    CheckExercise, confirm_quit_lesson, console, exercise_check, exercise_exit
 )
 
 

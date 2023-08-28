@@ -1,5 +1,5 @@
-from ..models.lesson import Lesson
 from ..models.exercise import InteractiveExercise
+from ..models.lesson import Lesson
 from .lesson_10_conditionals import lesson_10_conditionals
 
 

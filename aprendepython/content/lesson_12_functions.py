@@ -1,7 +1,7 @@
 from types import FunctionType
 
-from ..models.lesson import Lesson
 from ..models.exercise import InteractiveExercise
+from ..models.lesson import Lesson
 from .lesson_11_loops import lesson_11_loops
 
 

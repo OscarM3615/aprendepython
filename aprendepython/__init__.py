@@ -1,5 +1,5 @@
-from .intro import introduction
 from .config import config
+from .intro import introduction
 from .menu import Menu
 from .utils import console
 

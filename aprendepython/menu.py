@@ -4,7 +4,7 @@ Module representing the menu for choosing and running lessons.
 
 from .config import config
 from .content import lessons
-from .utils import console, safe_exit, selection, QuitLesson
+from .utils import QuitLesson, console, safe_exit, selection
 
 
 class Menu:

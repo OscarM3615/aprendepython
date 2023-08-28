@@ -1,7 +1,7 @@
 import re
 
-from ..models.lesson import Lesson
 from ..models.exercise import OnelinerExercise
+from ..models.lesson import Lesson
 from .lesson_05_relational_ops import lesson_05_relational_ops
 
 

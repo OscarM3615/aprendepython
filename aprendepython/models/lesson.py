@@ -11,7 +11,7 @@ from typing import Optional, Sequence
 
 from .exercise import Exercise
 from ..config import config
-from ..utils import confirm_quit_lesson, console, QuitLesson
+from ..utils import QuitLesson, confirm_quit_lesson, console
 
 
 class Lesson:

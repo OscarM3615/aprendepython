@@ -1,7 +1,7 @@
 import re
 
+from ..models.exercise import InteractiveExercise, OnelinerExercise
 from ..models.lesson import Lesson
-from ..models.exercise import OnelinerExercise, InteractiveExercise
 from .lesson_06_logical_ops import lesson_06_logical_ops
 
 
