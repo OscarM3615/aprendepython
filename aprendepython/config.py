@@ -53,7 +53,7 @@ class Config:
 
     FILE_NAME = 'config.json'
 
-    def __init__(self, dirs: PlatformDirs):
+    def __init__(self, path: str):
         """
         Initialize the Config instance.
 
@@ -62,7 +62,7 @@ class Config:
                 An instance of PlatformDirs to get the user data directory.
         """
 
-        self.path = Path(os.environ.get('AP_CONFIG_PATH', dirs.user_data_dir))
+        self.path = Path(path)
         self.options = None
 
         if not self.path.exists():
@@ -128,4 +128,4 @@ class Config:
 
 
 dirs = PlatformDirs('aprendepython')
-config = Config(dirs)
+config = Config(os.environ.get('AP_CONFIG_PATH', dirs.user_data_dir))
