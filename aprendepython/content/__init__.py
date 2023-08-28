@@ -14,6 +14,7 @@ from .lesson_09_dicts import lesson_09_dicts
 from .lesson_10_conditionals import lesson_10_conditionals
 from .lesson_11_loops import lesson_11_loops
 from .lesson_12_functions import lesson_12_functions
+from .lesson_13_classes import lesson_13_classes
 
 
 lessons: List[Lesson] = [
@@ -30,4 +31,5 @@ lessons: List[Lesson] = [
     lesson_10_conditionals,
     lesson_11_loops,
     lesson_12_functions,
+    lesson_13_classes,
 ]
