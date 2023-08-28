@@ -13,6 +13,7 @@ from .lesson_08_tuples import lesson_08_tuples
 from .lesson_09_dicts import lesson_09_dicts
 from .lesson_10_conditionals import lesson_10_conditionals
 from .lesson_11_loops import lesson_11_loops
+from .lesson_12_functions import lesson_12_functions
 
 
 lessons: List[Lesson] = [
@@ -28,4 +29,5 @@ lessons: List[Lesson] = [
     lesson_09_dicts,
     lesson_10_conditionals,
     lesson_11_loops,
+    lesson_12_functions,
 ]
