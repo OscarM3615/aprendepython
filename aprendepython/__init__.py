@@ -1,4 +1,5 @@
 from .config import config
+from .content import lessons
 from .intro import introduction
 from .menu import Menu
 from .utils import console
@@ -11,10 +12,11 @@ def comenzar():
         try:
             introduction()
         except (KeyboardInterrupt, EOFError):
-            console.print('[yellow]Saliendo de [bold green]aprendepython[/]...[/]')
+            console.print(
+                '[yellow]Saliendo de [bold green]aprendepython[/]...[/]')
             exit()
 
-    menu = Menu()
+    menu = Menu(lessons)
     menu.show()
 
 

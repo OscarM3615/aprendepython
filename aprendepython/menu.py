@@ -2,8 +2,10 @@
 Module representing the menu for choosing and running lessons.
 """
 
+from typing import Sequence
+
 from .config import config
-from .content import lessons
+from .models.lesson import Lesson
 from .utils import QuitLesson, console, safe_exit, selection
 
 
@@ -12,7 +14,7 @@ class Menu:
     Represents the menu for choosing and running lessons.
 
     Attributes:
-        lessons (List[Lesson]):
+        lessons (Sequence[Lesson]):
             A list of Lesson objects representing available lessons.
 
     Methods:
@@ -20,7 +22,7 @@ class Menu:
             Displays the menu and allows the user to select and run a lesson.
     """
 
-    def __init__(self):
+    def __init__(self, lessons: Sequence[Lesson]):
         self.lessons = lessons
 
         for lesson in lessons:
