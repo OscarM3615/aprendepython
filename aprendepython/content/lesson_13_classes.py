@@ -60,7 +60,7 @@ class PrintSelf(InteractiveExercise):
     env = {'ClaseTest': ClaseTest}
 
     def test(self) -> bool:
-        obj = self.locals.get('mi_objeto')
+        obj = self.env.get('mi_objeto')
         return isinstance(obj, ClaseTest) and obj.called_method == True
 
 
@@ -74,7 +74,8 @@ class PrintBookTitle(OnelinerExercise):
     env = {'mi_libro': Libro('Hamlet')}
 
     def test(self) -> bool:
-        return self.locals.get('mi_libro').called_method == True
+        obj = self.env.get('mi_libro')
+        return bool(obj and obj.called_method == True)
 
 
 class CreatePersonClass(InteractiveExercise):
@@ -92,7 +93,7 @@ class CreatePersonClass(InteractiveExercise):
     ]
 
     def test(self) -> bool:
-        person_class = self.locals.get('Persona')
+        person_class = self.env.get('Persona')
         if not isinstance(person_class, type):
             return False
         test_obj = person_class('Test')

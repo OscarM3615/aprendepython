@@ -18,13 +18,12 @@ class UseDefinedFunction(InteractiveExercise):
                     '_called_function': False}
         super().__init__()
 
-
     def _mostrar_mensaje(self):
-        self.locals['_called_function'] = True
+        self.env['_called_function'] = True
         self._print('Hola mundo')
 
     def test(self) -> bool:
-        return (self.locals.get('_called_function') == True
+        return (self.env.get('_called_function') == True
                 and 'Hola mundo' in self.stdout)
 
 
@@ -39,7 +38,7 @@ class CreateOwnFunction(InteractiveExercise):
     ]
 
     def test(self) -> bool:
-        user_function = self.locals.get('mi_funcion')
+        user_function = self.env.get('mi_funcion')
         return (isinstance(user_function, FunctionType)
                 and 'Estoy programando en Python' in self.stdout)
 
@@ -58,13 +57,13 @@ class UseSumFunction(InteractiveExercise):
         super().__init__()
 
     def _sumar(self, num1: int, num2: int) -> int:
-        self.locals['_called_function'] = True
-        self.locals['_args_used'] = (num1, num2)
+        self.env['_called_function'] = True
+        self.env['_args_used'] = (num1, num2)
         return num1 + num2
 
     def test(self) -> bool:
-        return (self.locals.get('_called_function') == True
-                and self.locals.get('_args_used') == (5, 7))
+        return (self.env.get('_called_function') == True
+                and self.env.get('_args_used') == (5, 7))
 
 
 class CreateEqualsFunction(InteractiveExercise):
@@ -80,7 +79,7 @@ class CreateEqualsFunction(InteractiveExercise):
     ]
 
     def test(self) -> bool:
-        equals = self.locals.get('son_iguales')
+        equals = self.env.get('son_iguales')
         return (isinstance(equals, FunctionType)
                 and equals('a', 'a') and not equals(2, 0))
 

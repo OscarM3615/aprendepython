@@ -32,7 +32,7 @@ class AddContact(InteractiveExercise):
     env = {'contactos': {'Juan': 9591234567, 'Alejandro': 9591745235}}
 
     def test(self) -> bool:
-        contacts = self.locals.get('contactos')
+        contacts = self.env.get('contactos')
         if not isinstance(contacts, dict):
             return False
         return contacts.get('Ana') == 9597654321

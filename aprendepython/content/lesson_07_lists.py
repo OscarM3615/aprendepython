@@ -63,7 +63,7 @@ class DeclareList(InteractiveExercise):
     ]
 
     def test(self) -> bool:
-        mi_lista = self.locals.get('mi_lista')
+        mi_lista = self.env.get('mi_lista')
         return mi_lista == ['hola', 'mundo']
 
 

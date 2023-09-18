@@ -16,7 +16,7 @@ class PrintVowels(InteractiveExercise):
     ]
 
     def test(self) -> bool:
-        vowels = self.locals.get('vocales')
+        vowels = self.env.get('vocales')
         return isinstance(vowels, tuple) and 'a\ne\ni\no\nu\n' in self.stdout
 
 
@@ -44,7 +44,7 @@ class WhileInputExit(InteractiveExercise):
 
     def test(self) -> bool:
         return (self.stdin.endswith('salir\n')
-                and self.locals.get('entrada') == 'salir')
+                and self.env.get('entrada') == 'salir')
 
 
 class PrintEvenNumbers(InteractiveExercise):

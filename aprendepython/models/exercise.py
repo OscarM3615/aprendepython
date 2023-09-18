@@ -8,7 +8,7 @@ interactively checking and testing user-submitted solutions.
 import random
 from abc import ABCMeta, abstractmethod
 from code import InteractiveConsole
-from typing import Any, Mapping, Optional, Sequence
+from typing import Any, Dict, Optional, Sequence
 
 from ..utils import (
     CheckExercise, confirm_quit_lesson, console, exercise_check, exercise_exit
@@ -24,13 +24,13 @@ class Exercise(metaclass=ABCMeta):
     """
 
     instructions: str = 'Please override the instructions attribute in your class.'
-    env: Mapping[str, Any] = {}
+    env: Dict[str, Any] = {}
     hints: Sequence[str] = ['Inténtalo de nuevo por favor.']
 
     def __init__(self):
-        """Initializes the exercise environment and locals."""
+        """Initializes the exercise environment."""
 
-        self.locals = {
+        self.env = {
             **self.env,
             'exit': exercise_exit,
             'quit': exercise_exit,
@@ -63,7 +63,7 @@ class OnelinerExercise(Exercise):
         console.print(self.instructions + '\n')
 
         while True:
-            shell = InteractiveConsole(self.locals)
+            shell = InteractiveConsole(self.env)
             self.source = shell.raw_input('>>> ')
             shell.runsource(self.source)
 
@@ -93,8 +93,7 @@ class InteractiveExercise(Exercise):
         super().__init__()
         self.stdin = ''
         self.stdout = ''
-        self.locals = {**self.locals,
-                       'print': self._print, 'input': self._input}
+        self.env = {**self.env, 'print': self._print, 'input': self._input}
 
     def _print(self, *values: object, sep: str = ' ', end: str = '\n'):
         """
@@ -122,7 +121,7 @@ class InteractiveExercise(Exercise):
 
         while True:
             try:
-                shell = InteractiveConsole(self.locals).interact('', '')
+                shell = InteractiveConsole(self.env).interact('', '')
             except CheckExercise:
                 try:
                     solution_valid = self.test()
