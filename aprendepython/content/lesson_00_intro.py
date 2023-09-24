@@ -27,7 +27,7 @@ lesson_00_intro = Lesson(
         'bastante sencilla. Actualmente existen dos versiones principales de '
         'Python: Python 2 y Python 3. Se prefiere el uso de la versión 3 por '
         'soportar características más modernas, por lo que este curso emplea '
-        ' la versión de Python 3.',
+        'la versión de Python 3.',
 
         'La instrucción más simple de Python es print, permite mostrar texto '
         'en pantalla incluyendo un salto de línea. Ejemplo:\n\n'
