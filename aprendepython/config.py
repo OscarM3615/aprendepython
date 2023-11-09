@@ -108,7 +108,7 @@ class Config:
 
     def seed_config(self):
         """Create the initial JSON config in the user's data directory."""
-        self.path.mkdir()
+        self.path.mkdir(parents=True)
         with open(self.path / self.FILE_NAME, 'w') as config_file:
             json.dump(default_options, config_file, indent=2)
 
@@ -127,5 +127,6 @@ class Config:
             json.dump(self.options, config_file, indent=2)
 
 
+# Use 'AP_CONFIG_PATH' for testing purposes, else use default config directory.
 dirs = PlatformDirs('aprendepython')
 config = Config(os.environ.get('AP_CONFIG_PATH', dirs.user_data_dir))
